@@ -1,0 +1,33 @@
+
+  <div class="container">
+    <div class="row">
+
+      <h4 class="text-center">Scan with Google Authenticator</h4>
+
+      <div class="col-md-4 mx-auto">
+
+        <form [formGroup]="form" (submit)="submit()">
+
+          <img [src]="qrCodeUrl" alt="Failed to fetch QR code" class="mx-auto d-block img-fluid">
+        
+          <input formControlName="verificationCode" type="Number" class="form-control mt-4 mb-2" placeholder="Verification Code" required>
+        
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Verifiy</button>
+
+          <hr>
+
+          <div class="text-center">
+            Download 
+            <span class="text-bold">Google Authenticator</span>  
+            from 
+            <a href="https://play.google.com/store/search?q=google+authenticator&c=apps" class="text-decoration-none">PlayStore</a>  
+            OR 
+            <a href="https://apps.apple.com/us/app/google-authenticator/id388497605" class="text-decoration-none">AppStore</a> 
+          </div>
+
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  
