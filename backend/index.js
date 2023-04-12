@@ -21,10 +21,6 @@ app.use(express.json())
 
 app.use(routes)
 
-// app.get('/', (req, res) => {
-//     res.send('this is home page')
-// })
-
 //creating and connecting to mongoDB Database then after that listening to server
 mongoose.connect('mongodb://127.0.0.1/tfa-auth', {
     useNewUrlParser:true

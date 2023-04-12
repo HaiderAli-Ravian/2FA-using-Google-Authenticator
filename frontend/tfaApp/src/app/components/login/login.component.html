@@ -1,16 +1,57 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-4 mx-auto">
+  <div class="row d-flex justify-content-center align-items-center " style="height:100vh;">
+    <div class="col-md-4 shadow-lg p-5 rounded-4">
       <form [formGroup]="form" (submit)="submit()">
-        <h1 class="h3 mb-4 fw-normal text-center mt-4 font-weight-bold display-4 text-primary">GCU-CMS</h1>
-      
-        <input formControlName="email" type="email" class="form-control mb-2" placeholder="Email" required>
-      
-        <input formControlName="password" type="password" class="form-control mb-2" placeholder="Password" required>
-       
-        <input formControlName="verificationCode" type="number" class="form-control mb-2" placeholder="Verification Code" required>
-      
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <h1
+          class="h3 mb-4 fw-normal text-center font-weight-bold display-4 text-primary"
+        >
+          GCU-CMS
+        </h1>
+
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control mb-2 mt-4"
+          placeholder="Email"
+          required
+          autocomplete="on"
+        />
+
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control mb-2"
+          placeholder="Password"
+          required
+        />
+
+        <input
+          formControlName="verificationCode"
+          type="number"
+          class="form-control mb-2"
+          placeholder="Verification Code"
+          required
+        />
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">
+          Sign in
+        </button>
+
+        <!-- horizontal line -->
+        <hr />
+
+        <!-- sign Up Link -->
+        <div class="pt-2 d-flex justify-content-center">
+          <span>
+            Don't have an account?
+            <a
+              routerLink="signup"
+              class="text-decoration-none text-primary font-weight-bold"
+              (click)="openSignUpForm()"
+              >Signup</a
+            >
+          </span>
+        </div>
       </form>
     </div>
   </div>

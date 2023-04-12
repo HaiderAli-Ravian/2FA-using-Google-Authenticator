@@ -9,6 +9,10 @@ const userModel = require('../models/user');
 
 const router = express.Router();
 
+
+
+
+
 //********************************************************************************** */
 
 router.post('/signup', async (req, res) => {
@@ -170,7 +174,7 @@ router.post('/login', async (req, res) => {
         token: code
     })
 
-    console.log(authenticated);
+    // console.log(authenticated);
 
     if (!authenticated) {
         res.send({
@@ -221,6 +225,27 @@ router.get('/user', async (req, res) => {
     }
 
 })
+
+//*********************************************************************************************/
+
+// router.get('/home', async (req, res) => {
+
+//     try {
+
+//         const cookie = req.cookies['jwt'];
+
+//         const claims = jwt.verify(cookie, 'iamthesecret')
+//         if (!claims) {
+//             res.redirect('/login')
+//         }else{
+//             res.redirect('/home')
+//         }
+
+//     } catch (error) {
+//         console.log(error);
+//     }
+
+// })
 
 
 

@@ -84,4 +84,9 @@ export class SignupComponent implements OnInit {
   }
 
 
+  openLoginForm(){
+    this.router.navigate(['/login'])
+  }
+
+
 }

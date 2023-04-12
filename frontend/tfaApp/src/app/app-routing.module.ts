@@ -6,7 +6,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { QrcodeComponent } from './components/qrcode/qrcode.component';
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  {path:'home', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'signup', component:SignupComponent},
   {path:'qrcode', component:QrcodeComponent}

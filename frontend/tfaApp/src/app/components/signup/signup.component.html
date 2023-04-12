@@ -1,21 +1,67 @@
+<div class="container">
+  <div class="row d-flex justify-content-center align-items-center " style="height:100vh;">
+    <div class="col-md-4 mx-auto shadow-lg p-5 rounded-4">
+      <form [formGroup]="signUpForm" (submit)="signUp()">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 mx-auto">
-        <form [formGroup]="signUpForm" (submit)="signUp()">
-          <h1 class="h3 mb-3 fw-normal text-center mt-4 font-weight-bold display-4 text-primary">GCU-CMS</h1>
-        
-          <input formControlName="name" class="form-control mb-2" placeholder="Name" required>
-        
-          <input formControlName="email" type="email" class="form-control mb-2" placeholder="Email" required>
-        
-          <input formControlName="password" type="password" class="form-control mb-2" placeholder="Password" required>
-      
-          <input formControlName="confirmPassword" type="password" class="form-control mb-2" placeholder="Confirm Password" required>
-        
-          <button class="w-100 btn btn-lg btn-primary" type="submit">SignUp</button>
-        </form>
-      </div>
+        <h1
+          class="h3 mb-3 fw-normal text-center font-weight-bold display-4 text-primary"
+        >
+          GCU-CMS
+        </h1>
+
+        <input
+          formControlName="name"
+          class="form-control mb-2"
+          placeholder="Name"
+          required
+          autocomplete="on"
+        />
+
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control mb-2"
+          placeholder="Email"
+          required
+          autocomplete="on"
+        />
+
+        <input
+          formControlName="password"
+          type="password"
+          class="form-control mb-2"
+          placeholder="Password"
+          required
+        />
+
+        <input
+          formControlName="confirmPassword"
+          type="password"
+          class="form-control mb-2"
+          placeholder="Confirm Password"
+          required
+        />
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">
+          SignUp
+        </button>
+
+        <!-- horizontal line -->
+        <hr />
+
+        <!-- Re-directing to Login Form -->
+        <div class="pt-2 d-flex justify-content-center">
+          <span>
+            Already have an account?
+            <a
+              routerLink="/login"
+              class="text-decoration-none text-primary font-weight-bold"
+              (click)="openLoginForm()"
+              >Login</a
+            >
+          </span>
+        </div>
+      </form>
     </div>
   </div>
-  
+</div>
