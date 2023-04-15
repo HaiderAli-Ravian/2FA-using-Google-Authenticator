@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit{
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
   ) {}
  
   ngOnInit(): void {
@@ -61,7 +61,9 @@ export class LoginComponent implements OnInit{
           withCredentials: true,
         })
         .subscribe(
-          (res) => this.router.navigate(['/home']),
+          (res) => {
+            this.router.navigate(['/home'])
+          },
           (err) => {
             Swal.fire('Error', err.error.message, 'error');
           }

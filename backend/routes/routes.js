@@ -10,9 +10,6 @@ const userModel = require('../models/user');
 const router = express.Router();
 
 
-
-
-
 //********************************************************************************** */
 
 router.post('/signup', async (req, res) => {
@@ -177,8 +174,8 @@ router.post('/login', async (req, res) => {
     // console.log(authenticated);
 
     if (!authenticated) {
-        res.send({
-            message: 'Verificaion code in Wrong'
+        return res.status(400).send({
+            message: 'Verification code is incorrect'
         })
     }
 
@@ -196,6 +193,58 @@ router.post('/login', async (req, res) => {
 
 
 })
+
+
+//********************************************************************************************* */
+
+// router.get('/home', async (req, res) => {
+
+//     try {
+
+//         const cookie = req.cookies['jwt'];
+
+//         const claims = jwt.verify(cookie, 'iamthesecret')
+//         if (!claims) {
+//             return res.status(401).send({
+//                 message: 'Unauthenticated'
+//             })
+//         }
+
+//         res.send({
+//             message: 'success'
+//         })
+
+//     } catch (error) {
+//         console.log(error);
+//     }
+
+// })
+
+// const authenticateUser = (req, res, next) => {
+//     const token = req.cookies.token;
+
+//     if (!token) {
+//       return res.redirect("/login");
+//     }
+
+//     try {
+//       const verified = jwt.verify(token, "iamthesecret");
+//       req.user = verified;
+//       next();
+//     } catch (err) {
+//       return res.redirect("/login");
+//     }
+//   };
+
+//   router.get("/home", authenticateUser, (req, res) => {
+//     res.send({
+//         message:"success"
+//     });
+//   });
+
+
+
+
 
 
 //********************************************************************************************* */
@@ -227,29 +276,6 @@ router.get('/user', async (req, res) => {
 })
 
 //*********************************************************************************************/
-
-// router.get('/home', async (req, res) => {
-
-//     try {
-
-//         const cookie = req.cookies['jwt'];
-
-//         const claims = jwt.verify(cookie, 'iamthesecret')
-//         if (!claims) {
-//             res.redirect('/login')
-//         }else{
-//             res.redirect('/home')
-//         }
-
-//     } catch (error) {
-//         console.log(error);
-//     }
-
-// })
-
-
-
-//******************************************************************************************* */
 
 
 router.post('/logout', (req, res) => {

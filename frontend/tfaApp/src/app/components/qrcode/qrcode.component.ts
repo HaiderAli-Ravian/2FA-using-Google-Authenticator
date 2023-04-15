@@ -19,7 +19,7 @@ export class QrcodeComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
   ) {}
  
 
@@ -52,7 +52,9 @@ export class QrcodeComponent implements OnInit {
     this.http.post('http://localhost:3000/qrcode/verify', { verificationCode: this.userCode }, {
       withCredentials: true
     }).subscribe(
-      () => this.router.navigate(['/home']),
+      () => {
+        this.router.navigate(['/home'])
+      },
       (err) => {
         console.log(err); 
         Swal.fire('Error', err.error.message, 'error')

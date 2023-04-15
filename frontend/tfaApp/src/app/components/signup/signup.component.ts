@@ -18,7 +18,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+
   ) { }
 
   ngOnInit(): void {
@@ -51,6 +52,7 @@ export class SignupComponent implements OnInit {
 
   }
 
+  
   signUp(): void {
 
     let newUser = this.signUpForm.getRawValue()
@@ -73,7 +75,9 @@ export class SignupComponent implements OnInit {
       this.http.post('http://localhost:3000/signup', newUser, {
         withCredentials: true
       }).subscribe(
-        () => this.router.navigate(['/qrcode']),
+        () => {
+          this.router.navigate(['/qrcode'])
+        },
         (err) => {
           console.log(err); // add this line to log the error message
           Swal.fire('Error', err.error.message, 'error')
